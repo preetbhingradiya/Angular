@@ -1,8 +1,8 @@
 <h2 class="notification"> {{count}} notification works!</h2>
 <img [src]="image" alt="">
 
-<h1>{{name}}</h1>
- <input type="text" [value]="name" #changeName>  <!--declare to parameter of function -->
+<h1>box value is :{{name}}</h1>
+<input type="text" [value]="name" #changeName (keyup)="OnChangeName(changeName.value)">  <!--declare to parameter of function -->
 <button (click)='OnChangeName(changeName.value)'>Change-Name</button>
 <br>
 <br>
@@ -12,4 +12,13 @@
 <p>{{qty()}}</p>
 <button (click)="increseQty()">+</button>
 <br>
+<br>
+
+<h1 *ngIf="show; then ifBlock else elseBlock"></h1>
+<ng-template #ifBlock>
+    <h1>if condition</h1>
+</ng-template>
+<ng-template #elseBlock>
+    <h1>else condition</h1>
+</ng-template>
 <br>
