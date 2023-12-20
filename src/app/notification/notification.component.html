@@ -1,2 +1,15 @@
 <h2 class="notification"> {{count}} notification works!</h2>
 <img [src]="image" alt="">
+
+<h1>{{name}}</h1>
+ <input type="text" [value]="name" #changeName>  <!--declare to parameter of function -->
+<button (click)='OnChangeName(changeName.value)'>Change-Name</button>
+<br>
+<br>
+
+<button (click)="decresQty()">-</button>
+<h3>QTY</h3>
+<p>{{qty()}}</p>
+<button (click)="increseQty()">+</button>
+<br>
+<br>
