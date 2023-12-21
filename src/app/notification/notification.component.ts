@@ -16,6 +16,10 @@ export class NotificationComponent {
     show:boolean=false
     name:string=""
     qty=signal<number>(0);  //signal propaty use in tempete with ()
+    user=[
+      {name:"anil",email:"anil@gmail.com",phone:123},
+      {name:"shubh",email:"shubh@gmail.com",phone:345}
+    ]
 
     OnChangeName(changeName:any){
       return this.name=changeName
