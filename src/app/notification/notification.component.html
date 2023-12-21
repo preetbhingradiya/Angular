@@ -28,3 +28,12 @@
 <br>
 <br>
 
+<h4>Form</h4>
+<form #form="ngForm" (ngSubmit)="getdata(form.value)">
+    <input type="emai" ngModel name="email" placeholder="Enter Email"><br><br>
+    <input type="text" ngModel name="password" placeholder="Enter password"><br><br>
+    <button>Log-In</button><br><br>
+</form>
+
+<p>{{userData.email}}</p> <p>{{userData.password}}</p>
+

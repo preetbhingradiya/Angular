@@ -1,12 +1,13 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-notification',
   standalone: true,
-  imports: [CommonModule,RouterOutlet],
+  imports: [CommonModule,RouterOutlet,FormsModule],
   templateUrl: './notification.component.html',
   styleUrl: './notification.component.scss'
 })
@@ -20,6 +21,7 @@ export class NotificationComponent {
       {name:"anil",email:"anil@gmail.com",phone:123},
       {name:"shubh",email:"shubh@gmail.com",phone:345}
     ]
+    userData:any={}
 
     OnChangeName(changeName:any){
       return this.name=changeName
@@ -30,5 +32,10 @@ export class NotificationComponent {
     }
     decresQty(){
       return this.qty.update(q=>q-1)
+    }
+
+    getdata(data:any){
+      console.log(data)
+      this.userData=data
     }
 }
