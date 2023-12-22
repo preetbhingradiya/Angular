@@ -1,1 +1,6 @@
-<p>todo-list works!</p>
+<input type="text" name="todo" #text> <br><br>
+<button mat-raised-button color="primary" (click)="getData(text.value)">Add Task</button>
+
+<ol>
+    <li style="margin: 20px 0 0 20px;" *ngFor="let i of texts">{{i.name}} <button mat-raised-button color="warn" (click)="removeData(i.id)">Delete</button></li>
+</ol>
