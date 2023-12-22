@@ -2,12 +2,13 @@ import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatButtonModule} from '@angular/material/button'
 
 @Component({
   selector: 'app-notification',
   standalone: true,
-  imports: [CommonModule,RouterOutlet,FormsModule],
+  imports: [CommonModule,RouterOutlet,FormsModule,MatSlideToggleModule,MatButtonModule],
   templateUrl: './notification.component.html',
   styleUrl: './notification.component.scss'
 })
