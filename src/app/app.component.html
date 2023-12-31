@@ -1,5 +1,39 @@
 <!-- <app-header></app-header> -->
 <!-- <app-notification></app-notification> -->
-<app-todo-list></app-todo-list>
-<!-- <h2>{{title}}</h2>
-<p>{{5*5}} and {{title}}</p> -->
+<!-- <app-todo-list></app-todo-list> -->
+<h2>{{ title | uppercase | slice : 3 }}</h2>
+<!--pipes -->
+<p>{{ 5 * 5 }} and {{ title }}</p>
+
+<input type="text" placeholder="Fisrt Name" #inputEl />
+<input type="text" placeholder="Last Name" #inputEl />
+<button (click)="show()">Full Name</button>
+<p>{{ fullName }}</p>
+
+<ng-template #template>
+  <h3>hello</h3>
+</ng-template>
+
+<div *ngTemplateOutlet="template"></div>
+<!--  use to ngTemplateOutlet display the ng-template -->
+
+<app-test>
+  <h3>Work in progress</h3>
+  <p #para>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa perspiciatis
+    nemo corporis quisquam mollitia quas consectetur nostrum dolore cupiditate
+    sint officiis, id a perferendis asperiores ipsum ullam vitae neque dolorum.
+  </p>
+  <br>
+  <p #para>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa perspiciatis
+    nemo corporis quisquam mollitia quas consectetur nostrum dolore cupiditate
+    sint officiis, id a perferendis asperiores ipsum ullam vitae neque dolorum.
+  </p>
+  <br>
+  <p #para>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa perspiciatis
+    nemo corporis quisquam mollitia quas consectetur nostrum dolore cupiditate
+    sint officiis, id a perferendis asperiores ipsum ullam vitae neque dolorum.
+  </p>
+</app-test>
