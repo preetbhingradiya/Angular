@@ -17,7 +17,7 @@
 <div *ngTemplateOutlet="template"></div>
 <!--  use to ngTemplateOutlet display the ng-template -->
 
-<app-test>
+<!-- <app-test>
   <h3>Work in progress</h3>
   <p #para>
     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa perspiciatis
@@ -36,4 +36,11 @@
     nemo corporis quisquam mollitia quas consectetur nostrum dolore cupiditate
     sint officiis, id a perferendis asperiores ipsum ullam vitae neque dolorum.
   </p>
-</app-test>
+</app-test> -->
+
+
+<input type="text" #inputBox>
+<button (click)="Onclick(inputBox)">submitt</button>
+
+<app-life-hooks [message]="message" ></app-life-hooks>
+
