@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { AfterContentInit, Component, ContentChild, DoCheck, ElementRef, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, ContentChild, DoCheck, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-life-hooks',
@@ -8,9 +8,10 @@ import { AfterContentInit, Component, ContentChild, DoCheck, ElementRef, Input, 
   templateUrl: './life-hooks.component.html',
   styleUrl: './life-hooks.component.scss'
 })
-export class LifeHooksComponent implements OnChanges, OnInit, DoCheck, AfterContentInit {
+export class LifeHooksComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked,AfterViewInit,AfterViewChecked {
 
-  @ContentChild('para') paraEl:ElementRef
+  @ViewChild('value ') afterview: ElementRef
+  @ContentChild('para') paraEl: ElementRef
   @Input() message: string;
   //use the constructor and pass Input property in parent comaponent can not be change
 
@@ -26,16 +27,31 @@ export class LifeHooksComponent implements OnChanges, OnInit, DoCheck, AfterCont
   }
 
   ngOnInit(): void {
-    console.log("ngOnInit Hook can run")  //run only one time after change the inpute property
+    console.log("ngOnInit Hook can run")  //run only one time after run the component
   }
 
   ngDoCheck(): void {
     console.log("ngDoCheck Hook can run")  //input property change or not change not mettaer if every change DITECTIVE run this run ex= only click event call
-    // console.log("DoCheck",this.paraEl)  this value is undife becouse p tag not initialized that hooks call or othe any
+    //  console.log("DoCheck",this.paraEl)    //this value is undife becouse p tag not initialized that hooks call or othe any
   }
 
   ngAfterContentInit(): void {
-    console.log("ngAfterContentInit Hook can run")
-    console.log("AfterContentChildInit",this.paraEl.nativeElement)  // this value is p tag becuse this hooks can run value finde
+    console.log("ngAfterContentInit Hook can run")  //if the project content value is initialized that run, when the value is change that call not run
+    // console.log("AfterContentChildInit", this.paraEl.nativeElement)  // this value is p tag becuse this hooks can run value finde
+  }
+
+  ngAfterContentChecked(): void {
+    console.log("ngAfterContentChecked Hook can run")  //if the project content value is change or chage ditective that can also run
+    // console.log(this.afterview)  //undefined value bacause this use content tage child or children
+  }
+
+  ngAfterViewInit(): void {
+    console.log("ngAfterViewInit Hook can run")  //the view template tag is initialized use of viewchilde or vew children that time run
+    //if the value can chage of tage that time it can not run
+  }
+
+  ngAfterViewChecked(): void {
+    console.log("ngAfterViewChecked Hook can run")  //the view template tag proparty can change or not but change DITECTIVE run this
+    console.log(this.afterview.nativeElement.textContent)     //but it is Hook only component not allow all directive
   }
 }

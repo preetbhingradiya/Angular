@@ -10,26 +10,26 @@ import { LifeHooksComponent } from './life-hooks/life-hooks.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet,NotificationComponent,HeaderComponent,TodoListComponent,TestComponent,LifeHooksComponent],
+  imports: [CommonModule, RouterOutlet, NotificationComponent, HeaderComponent, TodoListComponent, TestComponent, LifeHooksComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'angular';
-  fullName:string=''
-  message:string='';
-  @ViewChildren('inputEl') inputBox:QueryList<ElementRef>
+  fullName: string = ''
+  message: string = '';
+  @ViewChildren('inputEl') inputBox: QueryList<ElementRef>
 
-  show(){
-    let name=''
-    this.inputBox.forEach((ele)=>{
+  show() {
+    let name = ''
+    this.inputBox.forEach((ele) => {
       name += ele.nativeElement.value + ' '
     })
-    this.fullName=name
+    this.fullName = name
   }
 
   // @ViewChild('inputBox') message:ElementRef;   seconde method use
-  Onclick(val:HTMLInputElement){
-    this.message=val.value
+  Onclick(val: HTMLInputElement) {
+    this.message = val.value
   }
 }
