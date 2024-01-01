@@ -17,7 +17,8 @@ import { LifeHooksComponent } from './life-hooks/life-hooks.component';
 export class AppComponent {
   title = 'angular';
   fullName:string=''
-  @ViewChildren('inputEl') inputBox:QueryList<ElementRef> 
+  message:string='';
+  @ViewChildren('inputEl') inputBox:QueryList<ElementRef>
 
   show(){
     let name=''
@@ -26,10 +27,8 @@ export class AppComponent {
     })
     this.fullName=name
   }
-  message:string='';
 
   // @ViewChild('inputBox') message:ElementRef;   seconde method use
-
   Onclick(val:HTMLInputElement){
     this.message=val.value
   }

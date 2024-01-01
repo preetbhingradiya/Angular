@@ -31,16 +31,12 @@
     sint officiis, id a perferendis asperiores ipsum ullam vitae neque dolorum.
   </p>
   <br>
-  <p #para>
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa perspiciatis
-    nemo corporis quisquam mollitia quas consectetur nostrum dolore cupiditate
-    sint officiis, id a perferendis asperiores ipsum ullam vitae neque dolorum.
-  </p>
 </app-test> -->
 
 
-<input type="text" #inputBox>
+<input type="text" #inputBox (focus)="0">
 <button (click)="Onclick(inputBox)">submitt</button>
-
-<app-life-hooks [message]="message" ></app-life-hooks>
+<app-life-hooks [message]="message" >
+  <p #para>ng-content afterContenInit</p>
+</app-life-hooks>
 
