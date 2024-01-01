@@ -16,6 +16,7 @@ import { LifeHooksComponent } from './life-hooks/life-hooks.component';
 })
 export class AppComponent {
   title = 'angular';
+  destroy:boolean=true
   fullName: string = ''
   message: string = '';
   @ViewChildren('inputEl') inputBox: QueryList<ElementRef>
@@ -31,5 +32,9 @@ export class AppComponent {
   // @ViewChild('inputBox') message:ElementRef;   seconde method use
   Onclick(val: HTMLInputElement) {
     this.message = val.value
+  }
+
+  destroyComponent(){
+    this.destroy=!this.destroy
   }
 }

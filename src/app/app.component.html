@@ -36,6 +36,7 @@
 
 <input type="text" #inputBox>
 <button (click)="Onclick(inputBox)">submitt</button>
-<app-life-hooks [message]="message">
+<app-life-hooks [message]="message" *ngIf="destroy">
   <p #para>ng-content value is :- {{message}}</p>
 </app-life-hooks>
+<button (click)="destroyComponent()">Show / Hide</button>

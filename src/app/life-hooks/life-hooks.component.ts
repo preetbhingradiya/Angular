@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, ContentChild, DoCheck, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, ContentChild, DoCheck, ElementRef, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-life-hooks',
@@ -8,7 +8,7 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
   templateUrl: './life-hooks.component.html',
   styleUrl: './life-hooks.component.scss'
 })
-export class LifeHooksComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked,AfterViewInit,AfterViewChecked {
+export class LifeHooksComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
 
   @ViewChild('value ') afterview: ElementRef
   @ContentChild('para') paraEl: ElementRef
@@ -53,5 +53,9 @@ export class LifeHooksComponent implements OnChanges, OnInit, DoCheck, AfterCont
   ngAfterViewChecked(): void {
     console.log("ngAfterViewChecked Hook can run")  //the view template tag proparty can change or not but change DITECTIVE run this
     console.log(this.afterview.nativeElement.textContent)     //but it is Hook only component not allow all directive
+  }
+
+  ngOnDestroy(): void {
+    console.log("ngOnDestroy Hook can run")  //if the any text/value can be deletedor remove that time run
   }
 }
