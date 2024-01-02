@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, ContentChild, DoCheck, ElementRef, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { Directives } from '../directives/directives';
 import { HighlightDirective } from '../directives/highlight.directive';
+import { DisabaleDirective } from '../directives/disabale.directive';
 
 @Component({
   selector: 'app-life-hooks',
   standalone: true,
-  imports: [CommonModule,Directives,HighlightDirective],
+  imports: [CommonModule,Directives,HighlightDirective,DisabaleDirective],
   templateUrl: './life-hooks.component.html',
   styleUrl: './life-hooks.component.scss'
 })

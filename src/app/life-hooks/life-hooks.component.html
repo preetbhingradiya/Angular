@@ -1,5 +1,5 @@
 
-<p>message : {{message}} </p>
+<p appDisabale [condition]=true>message : {{message}} </p>
 <ng-content></ng-content>
 
-<h1 #value setDirective appHighlight>Hello word !</h1>
+<h1 #value setDirective appHighlight [textColor]="'red'"  >Hello word !</h1>

@@ -6,11 +6,12 @@ import { HeaderComponent } from './header/header.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TestComponent } from './test/test.component';
 import { LifeHooksComponent } from './life-hooks/life-hooks.component';
+import { DisplayComponent } from './display/display.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NotificationComponent, HeaderComponent, TodoListComponent, TestComponent, LifeHooksComponent],
+  imports: [CommonModule, RouterOutlet, NotificationComponent, HeaderComponent, TodoListComponent, TestComponent, LifeHooksComponent,DisplayComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
