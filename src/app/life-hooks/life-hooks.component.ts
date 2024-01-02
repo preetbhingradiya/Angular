@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, ContentChild, DoCheck, ElementRef, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { Directives } from '../directives/directives';
+import { HighlightDirective } from '../directives/highlight.directive';
 
 @Component({
   selector: 'app-life-hooks',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,Directives,HighlightDirective],
   templateUrl: './life-hooks.component.html',
   styleUrl: './life-hooks.component.scss'
 })
@@ -41,7 +43,7 @@ export class LifeHooksComponent implements OnChanges, OnInit, DoCheck, AfterCont
   }
 
   ngAfterContentChecked(): void {
-    console.log("ngAfterContentChecked Hook can run")  //if the project content value is change or chage ditective that can also run
+    console.log("ngAfterContentChecked Hook can run")  //if the project content value is change or not but chage ditective that can also run
     // console.log(this.afterview)  //undefined value bacause this use content tage child or children
   }
 
