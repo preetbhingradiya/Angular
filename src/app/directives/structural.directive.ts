@@ -6,12 +6,11 @@ import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 })
 export class StructuralDirective {
 
-  constructor(private view:TemplateRef<any>,private template:ViewContainerRef) { }
-
-  @Input() set appStructural(condition:boolean){
-    if(condition){
+  constructor(private view: TemplateRef<any>, private template: ViewContainerRef) { }
+  @Input() set appStructural(condition: boolean) {
+    if (condition) {
       this.template.createEmbeddedView(this.view)
-    }else{
+    } else {
       this.template.clear()
     }
   }

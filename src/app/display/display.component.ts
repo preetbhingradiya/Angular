@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { StructuralDirective } from '../directives/structural.directive';
 
 @Component({
@@ -7,11 +7,14 @@ import { StructuralDirective } from '../directives/structural.directive';
   standalone: true,
   imports: [CommonModule,StructuralDirective],
   templateUrl: './display.component.html',
-  styleUrl: './display.component.scss'
 })
 export class DisplayComponent {
 
+
   display:boolean=false;
+  pluse:string='+'
+  mines:string='-'
+  @ViewChild("para") element:ElementRef;
 
   diplatText(){
     this.display=!this.display;
