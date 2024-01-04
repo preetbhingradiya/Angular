@@ -8,11 +8,12 @@ import { TestComponent } from './test/test.component';
 import { LifeHooksComponent } from './life-hooks/life-hooks.component';
 import { DisplayComponent } from './display/display.component';
 import { ObservableComponent } from './observable/observable.component';
+import { SubjectComponent } from './subject/subject.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NotificationComponent, HeaderComponent, TodoListComponent, TestComponent, LifeHooksComponent,DisplayComponent,ObservableComponent],
+  imports: [CommonModule, RouterOutlet, NotificationComponent, HeaderComponent, TodoListComponent, TestComponent, LifeHooksComponent,DisplayComponent,ObservableComponent,SubjectComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
