@@ -1,0 +1,7 @@
+<div style="margin-top: 20px;">
+  <p>Get Some Observable Data</p>
+  <div *ngFor="let val of data">
+    <p>{{val}}</p>
+  </div>
+  <button (click)="getAsyncData()">Get Data</button>
+</div>
