@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewChecked, Component, ElementRef, ViewChild } from '@angular/core';
 import { Observable, from, fromEvent } from 'rxjs';
-import {map} from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-observable',
@@ -26,8 +26,8 @@ export class ObservableComponent {
   })
 
   myobs = from([1, 2, 3, 4, 5])
-  transform = this.myobs.pipe(map((val:any) =>{
-    return val*5
+  transform = this.myobs.pipe(map((val: any) => {
+    return val * 5
   }))
 
   getAsyncData() {
