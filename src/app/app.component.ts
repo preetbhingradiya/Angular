@@ -10,16 +10,18 @@ import { DisplayComponent } from './display/display.component';
 import { ObservableComponent } from './observable/observable.component';
 import { SubjectComponent } from './subject/subject.component';
 import { FormComponent } from './form/form.component';
+import { ReactiveFromComponent } from './reactive-from/reactive-from.component';
+import { CustomPipe } from './custom.pipe';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NotificationComponent, HeaderComponent, TodoListComponent, TestComponent, LifeHooksComponent,DisplayComponent,ObservableComponent,SubjectComponent,FormComponent],
+  imports: [CommonModule, RouterOutlet, NotificationComponent, HeaderComponent, TodoListComponent, TestComponent, LifeHooksComponent,DisplayComponent,ObservableComponent,SubjectComponent,FormComponent,ReactiveFromComponent,CustomPipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'angular';
+  title = 100;
   destroy:boolean=true
   fullName: string = ''
   message: string = '';
