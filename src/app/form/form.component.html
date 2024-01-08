@@ -1,0 +1,19 @@
+<div style="margin-top: 30px;">
+  <form (ngSubmit)="OnFormSubmitt(userForm)" #userForm="ngForm">
+    <input type="text" placeholder="Fisrt Name" ngModel name="Fisrtname" #fname="ngModel" [(ngModel)]="fisrtName" required> <br>
+    <small *ngIf="fname.invalid && fname.touched">*First name is Required is Filed</small>
+    <span *ngIf="fname.valid">You entered Fisrtname :{{fisrtName}}</span><br>
+
+    <input type="text" placeholder="Last Name" ngModel name="lastname" #lname="ngModel" [(ngModel)]="lastName" required> <br>
+    <small *ngIf="lname.invalid && lname.touched">*Last name is Required is Filed</small>
+    <span *ngIf="lname.valid">You entered Lastname :{{lastName}}</span><br>
+
+
+    <input type="email" placeholder="Emial" ngModel name="Emial"#email="ngModel" [(ngModel)]="Email" required> <br>
+    <small *ngIf="email.invalid && email.touched">* Email is Required is Filed</small>
+    <span *ngIf="email.valid">You entered Email :{{Email}}</span><br>
+
+
+    <input type="submit" value="submit" [disabled]="userForm.invalid"> <br><br>
+  </form>
+</div>
