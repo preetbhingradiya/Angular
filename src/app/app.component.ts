@@ -12,11 +12,13 @@ import { SubjectComponent } from './subject/subject.component';
 import { FormComponent } from './form/form.component';
 import { ReactiveFromComponent } from './reactive-from/reactive-from.component';
 import { CustomPipe } from './custom.pipe';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpCrudComponent } from './http-crud/http-crud.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NotificationComponent, HeaderComponent, TodoListComponent, TestComponent, LifeHooksComponent,DisplayComponent,ObservableComponent,SubjectComponent,FormComponent,ReactiveFromComponent,CustomPipe],
+  imports: [CommonModule, RouterOutlet, NotificationComponent, HeaderComponent, TodoListComponent, TestComponent, LifeHooksComponent,DisplayComponent,ObservableComponent,SubjectComponent,FormComponent,ReactiveFromComponent,CustomPipe,HttpCrudComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
