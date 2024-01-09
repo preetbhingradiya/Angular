@@ -1,10 +1,17 @@
 <div style="margin-top: 20px;">
   <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
-    <input type="text" placeholder="Enter your name" name="firstname" formControlName="user"> <br>
-    <span *ngIf="userValidation.touched && userValidation.invalid">This filed is required</span><br>
+    <input type="text" placeholder="Enter your firstname" name="firstname" formControlName="firstname"> <br>
+    <span *ngIf="fnameValidation.touched && fnameValidation.invalid">*This filed is required</span><br>
+
+    <input type="text" placeholder="Enter your lastname" name="lastname" formControlName="lastname"> <br>
+    <span *ngIf="lnameValidation.touched && lnameValidation.invalid">*This filed is required</span><br>
+
+    <input type="date" name="bod" formControlName="bod"><br>
 
     <input type="text" placeholder="Enter your password" name="password" formControlName="password"> <br>
-    <span *ngIf="passwordValidation.touched && passwordValidation.invalid">This filed is required</span><br>
+    <span *ngIf="passwordValidation.touched && passwordValidation.invalid">*This filed is required</span><br>
+
+    <input type="text" placeholder="Username" [value]="username"><br>
 
     <button [disabled]="loginForm.invalid">Login</button>
   </form>
