@@ -12,7 +12,7 @@ import { BehaviorSubject, ReplaySubject } from 'rxjs';
 })
 export class SubjectComponent implements OnInit {
   ngOnInit(): void {
-    //  let obj=new BehaviorSubject<number>(100)        
+    //  let obj=new BehaviorSubject<number>(100)
 
     //  obj.subscribe((res)=>console.log("Subscribe 1",res))
     //  obj.subscribe((res)=>console.log("Subscribe 2",res))
@@ -22,6 +22,7 @@ export class SubjectComponent implements OnInit {
     //  obj.subscribe((res)=>console.log("Subscribe 3",res))   //200 value not print because the privous value is not subscribe in subject
 
 
+    
     //replay subject
     let obj = new ReplaySubject(1)
     //on 1 in 100 value is buffer and not subscrine 3 becuse after the value is change 200 so that

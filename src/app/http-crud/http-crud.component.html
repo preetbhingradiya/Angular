@@ -1,1 +1,29 @@
-<p>http-crud works!</p>
+<form>
+  <!-- <input type="number" placeholder="Enter your id" name="id" ngModel [(ngModel)]="userId"> -->
+  <input type="text" placeholder="Enter your name" name="user" [(ngModel)]="userName">
+  <input type="email" placeholder="Enter your email" name="email"  [(ngModel)]="email">
+  <input type="text" placeholder="Enter your password" name="password"  [(ngModel)]="password">
+  <input type="submit" value="submit" *ngIf="!updateData" (click)="onSubmit()">
+  <input type="submit" value="EditUser" *ngIf="updateData" (click)="onEditUser()">
+</form>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>USER</th>
+      <th>EMAIL</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of userData">
+      <td>{{user.id}}</td>
+      <td>{{user.user}}</td>
+      <td>{{user.email}}</td>
+      <td><button (click)="Edituser(user)">EDIT</button></td>
+      <td><button (click)="deleteuser(user.id)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
