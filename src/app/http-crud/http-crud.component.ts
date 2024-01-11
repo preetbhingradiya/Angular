@@ -30,7 +30,6 @@ export class HttpCrudComponent implements OnInit {
   }
 
   getAllUser() {
-    const a = this.userData? 'sqads':''
     this.user.grtUser().subscribe((ele) => {
       this.userData = ele as any[];
     });
@@ -83,3 +82,4 @@ export class HttpCrudComponent implements OnInit {
   }
 
 }
+  
