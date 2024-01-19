@@ -14,14 +14,14 @@ import { filter } from 'rxjs';
 })
 export class HttpCrudComponent implements OnInit {
 
-  userData: any[]=[];
-  updateData:boolean=false;
+  userData: any[] = [];
+  updateData: boolean = false;
 
   userName: string;
   email: string;
   password: string
-  userId:number;
-  currentId:any;
+  userId: number;
+  currentId: any;
 
   constructor(private user: HttpserviceService) { }
 
@@ -51,35 +51,34 @@ export class HttpCrudComponent implements OnInit {
 
   deleteuser(id: string) {
     console.log(id);
-    this.user.deleteUser(id).subscribe((res)=> {
+    this.user.deleteUser(id).subscribe((res) => {
       this.getAllUser();
       console.log("'User deleted successfully", res);
     });
   }
 
-  Edituser(user:any){
-    this.updateData=true
-    this.userId=user.id
-    this.userName=user.user
-    this.email=user.email
-    this.password=user.password
-    this.currentId=user.id
+  Edituser(user: any) {
+    this.updateData = true
+    this.userId = user.id
+    this.userName = user.user
+    this.email = user.email
+    this.password = user.password
+    this.currentId = user.id
   }
 
-  onEditUser(){
-    let edit={
+  onEditUser() {
+    let edit = {
       id: this.userId,
       user: this.userName,
       email: this.email,
       password: this.password,
     }
     console.log(edit)
-    this.user.editUser(this.currentId,edit).subscribe((ele)=>{
+    this.user.editUser(this.currentId, edit).subscribe((ele) => {
       this.getAllUser()
       console.log(ele)
     })
-    this.updateData=false
+    this.updateData = false
   }
 
 }
-  

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewChecked, Component, ElementRef, ViewChild } from '@angular/core';
-import { Observable, from, fromEvent } from 'rxjs';
+import { Observable, from, fromEvent, interval } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Component({
@@ -10,10 +10,11 @@ import { map } from 'rxjs/operators';
   templateUrl: './observable.component.html',
 })
 export class ObservableComponent {
-  // @ViewChild('clickBtn') btn: ElementRef
+  @ViewChild('clickBtn') btn: ElementRef
   btnObs;
   data: any[] = [];
 
+  
   myObservable = new Observable((observer) => {
     // observer.next([1,2,3,4,5])
     setTimeout(() => { observer.next(1) }, 1000) //observer can also emit or next multiple values
@@ -29,6 +30,8 @@ export class ObservableComponent {
   transform = this.myobs.pipe(map((val: any) => {
     return val * 5
   }))
+
+
 
   getAsyncData() {
     //next error complete
@@ -55,6 +58,7 @@ export class ObservableComponent {
       }
     })
   }
+
 
   // showItem(){
   //   let div=document.createElement('div')

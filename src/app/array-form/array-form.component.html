@@ -1,0 +1,18 @@
+<form [formGroup]="arryForm">
+      <div formArrayName="username">
+        <div *ngFor="let control of daynamicArray;let i=index">
+          <div [formGroupName]="i">
+            <input type="text" placeholder="Enter name" formControlName="name">
+            <!-- <span *ngIf="this.arryForm.get('name').errors?.['required'] && this.arryForm.get('name').touched ">*feild is required</span> -->
+
+            <button type="button" (click)="onSubmitData(i)">Submit</button>
+          </div>
+        </div>
+      </div>
+  <button (click)="submitArry()">Add Filed</button>
+</form>
+
+
+<div *ngFor="let i of store">
+  <p  *ngIf="show">NAME :- {{i.name==''?'user not found':i.name}}</p>
+</div>

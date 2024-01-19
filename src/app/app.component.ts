@@ -14,11 +14,12 @@ import { ReactiveFromComponent } from './reactive-from/reactive-from.component';
 import { CustomPipe } from './custom.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpCrudComponent } from './http-crud/http-crud.component';
+import { ArrayFormComponent } from './array-form/array-form.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NotificationComponent, HeaderComponent, TodoListComponent, TestComponent, LifeHooksComponent,DisplayComponent,ObservableComponent,SubjectComponent,FormComponent,ReactiveFromComponent,CustomPipe,HttpCrudComponent],
+  imports: [CommonModule, RouterOutlet, NotificationComponent, HeaderComponent, TodoListComponent, TestComponent, LifeHooksComponent,DisplayComponent,ObservableComponent,SubjectComponent,FormComponent,ReactiveFromComponent,CustomPipe,HttpCrudComponent,ArrayFormComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
