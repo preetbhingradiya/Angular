@@ -10,7 +10,7 @@ import { Component, ContentChild, ContentChildren, ElementRef, QueryList } from 
 export class TestComponent {
   @ContentChild('para') paragrahEl:ElementRef
   //use to contentChilde access to the ng-content tag refrence value (ONLY ON TAG)
-  
+
 
   @ContentChildren('para') paragrah:QueryList<ElementRef>
   //use to contentChildren access to the ng-content tag refrence value (MULTIPAL ON TAG)
