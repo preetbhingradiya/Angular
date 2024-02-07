@@ -14,7 +14,7 @@ export class ObservableComponent {
   btnObs;
   data: any[] = [];
 
-  
+
   myObservable = new Observable((observer) => {
     // observer.next([1,2,3,4,5])
     setTimeout(() => { observer.next(1) }, 1000) //observer can also emit or next multiple values

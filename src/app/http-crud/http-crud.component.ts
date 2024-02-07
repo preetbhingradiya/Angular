@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit, inject } from '@angular/core';
 import { HttpserviceService } from '../service/httpservice.service';
 import { FormsModule, NgForm } from '@angular/forms';
@@ -9,10 +9,11 @@ import { FormsModule, NgForm } from '@angular/forms';
   standalone: true,
   imports: [CommonModule, HttpClientModule, FormsModule],
   templateUrl: './http-crud.component.html',
-  providers: [HttpserviceService]
+  providers:[]
 })
 export class HttpCrudComponent implements OnInit {
 
+  user:HttpserviceService=inject(HttpserviceService)
   userData: any[] = [];
   updateData: boolean = false;
 
@@ -22,7 +23,7 @@ export class HttpCrudComponent implements OnInit {
   userId: number;
   currentId: any;
 
-  constructor(private user: HttpserviceService) { }
+  // constructor(private user: HttpserviceService,) { }
 
   ngOnInit(): void {
     this.getAllUser()

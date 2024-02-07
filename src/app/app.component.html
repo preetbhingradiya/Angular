@@ -34,6 +34,18 @@
   <br>
 </app-test> -->
 
+<div class="example-box" style="cursor: move;" cdkDrag>
+  Drag me around
+</div>
+
+<div cdkDropList  (cdkDropListDropped)="drop($event)"  style="cursor: move;margin-top: 20px;">
+  @for (movie of movies; track movie) {
+    <div class="example-box" cdkDrag>
+      {{movie.title}}
+      <img *cdkDragPreview [src]="movie.poster">
+    </div>
+  }
+</div>
 
 <input type="text" #inputBox>
 <button (click)="Onclick(inputBox)">submitt</button>
@@ -47,5 +59,5 @@
 <!-- <app-subject></app-subject> -->
 <!-- <app-form></app-form> -->
 <!-- <app-reactive-from></app-reactive-from> -->
-<!-- <app-http-crud></app-http-crud> -->
+<app-http-crud></app-http-crud>
 <app-array-form></app-array-form>
